@@ -10,6 +10,6 @@ const router = Router();
 router.post("/authenticate", new AuthenticateUserController().handle);
 router.get("/profile", ensureAuthenticated, new ProfileUserController().handle);
 router.post('/messages', ensureAuthenticated, new CreateMessageController().handle)
-router.get('/messages/last3', ensureAuthenticated, new GetLast3MessagesController().handle)
+router.get('/messages/last3', new GetLast3MessagesController().handle)
 
 export { router };
